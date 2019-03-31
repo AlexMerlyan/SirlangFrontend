@@ -1,12 +1,14 @@
 import React from 'react';
-import CodeEditor from './CodeEditor.js';
+import Header from './Header.js';
+import Content from './Content.js';
+import Footer from './Footer.js';
 
 function App() {
-  var backendUrl = 'http://localhost:8080';
   return (
       <div>
-          <h1>SirLang</h1>
-          <CodeEditor url={backendUrl}></CodeEditor>
+          <Header></Header>
+          <Content></Content>
+          <Footer></Footer>
       </div>
   )
 }
