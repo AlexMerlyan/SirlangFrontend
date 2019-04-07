@@ -1,5 +1,6 @@
 import React from 'react';
-import CodeEditor from './CodeEditor.js';
+import CodeEditor from './content/CodeEditor.js';
+import Slider from './content/Slider.js'
 
 var contentStyle = {
   width: "100%",
@@ -12,15 +13,15 @@ var contentStyle = {
 var textStyle = {
   margin: "5%",
   marginLeft: "40%"
-}
+};
 
 function Content() {
-  var backendUrl = 'http://localhost:8080';
+  var backendUrl = 'https://calm-lake-11769.herokuapp.com';
+  //var backendUrl = 'http://localhost:8080';
+
   return (
-      <div style={contentStyle}>
-          <h2>Сударь, это язык с низким порогом вхождения, без пугающих неочевидных синтаксических знаков, которые распространены в других языках</h2>
-          <h3 style={textStyle}>Сударь, это просто!</h3>
-          <h1>Попробуй запустить свою первую программу на языке программирования Сударь!</h1>
+      <div>
+          <Slider></Slider>
           <CodeEditor url={backendUrl}></CodeEditor>
       </div>
   )

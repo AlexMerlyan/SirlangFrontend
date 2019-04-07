@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Card, Jumbotron, Button } from 'react-bootstrap'
 
 class CodeEditor extends Component {
 
@@ -9,6 +10,8 @@ class CodeEditor extends Component {
         this.endPoints = {
             compile: '/compile'
         };
+
+        this.programText = 'Приветствую!\nСударь, будьте добры, выведите на экран это: "Моя первая программа на языке Сударь!"\nСпасибо вам! Всего хорошего!';
 
         this.state = {
             consoleOutput: ''
@@ -37,15 +40,22 @@ class CodeEditor extends Component {
     }
     
     render() {
-        console.log('It was alert from render');
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    <textarea onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Run" />
-                <label>Console output: {this.state.consoleOutput}</label>
-            </form>
+            <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
+                <Jumbotron>
+                    <label>
+                        <textarea rows="8" cols="100" onChange={this.handleChange} />
+                    </label>
+                    <p>
+                    <Button onClick={this.handleSubmit}>Запустить</Button>
+                    </p>
+                <h3>Результат выполнения программы:</h3>
+                <p>
+                    {this.state.consoleOutput}
+                </p>
+                </Jumbotron>
+                
+            </div>
         );
     }
 
