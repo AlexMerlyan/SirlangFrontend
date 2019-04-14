@@ -15,7 +15,7 @@ class CodeEditor extends Component {
             consoleOutput: ''
         }
 
-        this.program = 'Приветствую!\nСударь, будьте добры, выведите на экран это:"Моя первая программа на языке Сударь!"\nСпасибо вам! Всего хорошего!';
+        this.code = 'Приветствую!\nСударь, будьте добры, выведите на экран это:"Моя первая программа на языке Сударь!"\nСпасибо вам! Всего хорошего!';
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,9 +28,6 @@ class CodeEditor extends Component {
     
     handleSubmit(event) {
         event.preventDefault();
-        if (event.target.value === '' || event.target.value === undefined) {
-            this.code = this.program;            
-        }
         var data = {
             sirlangCode: this.code
         };
@@ -50,7 +47,7 @@ class CodeEditor extends Component {
                 <Jumbotron>
                     <label>
                         <textarea rows="8" cols="100" onChange={this.handleChange}>
-                            {this.program}
+                            {this.code}
                         </textarea>
                     </label>
                     <p>
