@@ -28,10 +28,15 @@ class CodeEditor extends Component {
     
     handleSubmit(event) {
         event.preventDefault();
+        if (event.target.value === '' || event.target.value === undefined) {
+            this.code = this.program;            
+        }
         var data = {
             sirlangCode: this.code
         };
         var compileUrl = this.url + this.endPoints.compile;
+        console.log(data);
+        console.log(compileUrl);
         axios.post(compileUrl, data).then(response => {
             this.setState({
                 consoleOutput: response.data.consoleOutput
