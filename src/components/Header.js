@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
-import { Button, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { Button, Modal, modalClose, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import ExampleCodeModal from './content/ExampleCodeModal.js'
 
 class Header extends Component {
 
   constructor(props) {
       super(props);
-      this.showAlertGoHomeAndRedirect = this.showAlertGoHomeAndRedirect.bind(this);
+      this.state = { 
+        modalShow: false, 
+    };
   }
 
   showAlertGoHomeAndRedirect() {
@@ -14,26 +17,29 @@ class Header extends Component {
   }
 
   render() {
+    let modalClose = () => this.setState({ modalShow: false });
     return (
+      <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand href="https://github.com/AlexMerlyan/SirLang" target="_blank">Github</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#features">Фичи</Nav.Link>
+          <Nav.Link onClick={() => alert('Здесь могла бы быть ваша реклама')}>Фичи</Nav.Link>
           <NavDropdown title="Примеры программ" id="collasible-nav-dropdown">
-            <NavDropdown.Item>Вывод в консоль</NavDropdown.Item>
-            <NavDropdown.Item>Программа с условием</NavDropdown.Item>
-            <NavDropdown.Item>Факториал числа</NavDropdown.Item>
+            <NavDropdown.Item variant="primary" onClick={() => this.setState({ modalShow: true})}>Факториал числа</NavDropdown.Item>
+            <NavDropdown.Item href="https://github.com/AlexMerlyan/SirLang/tree/master/src/main/res/print_examples" target="_blank">Еще примеры</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item onClick={this.showAlertGoHomeAndRedirect}>Я БОГ ПРОГРАММИРОВАНИЯ ЗАЧЕМ МНЕ ПРИМЕРЫ</NavDropdown.Item>
           </NavDropdown>
         </Nav>
         <Nav>
-          <Nav.Link onClick={() => alert("Дополнительная инфа? Серьезно? У тебя уже есть целых ТРИ ПРИМЕРА ИДЕАЛЬНОГО КОДА!")}>Дополнительная инфа</Nav.Link>
+          <Nav.Link onClick={() => alert("Дополнительная инфа? Серьезно? У тебя уже есть ПРИМЕРЫ ИДЕАЛЬНОГО КОДА!")}>Дополнительная инфа</Nav.Link>
         </Nav>
       </Navbar.Collapse>
-    </Navbar>
+      </Navbar>
+      <ExampleCodeModal show={this.state.modalShow} onHide={modalClose} ></ExampleCodeModal>
+      </div>
     );
   }
 }

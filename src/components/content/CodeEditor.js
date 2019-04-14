@@ -11,11 +11,11 @@ class CodeEditor extends Component {
             compile: '/compile'
         };
 
-        this.programText = 'Приветствую!\nСударь, будьте добры, выведите на экран это: "Моя первая программа на языке Сударь!"\nСпасибо вам! Всего хорошего!';
-
         this.state = {
             consoleOutput: ''
         }
+
+        this.program = 'Приветствую!\nСударь, будьте добры, выведите на экран это:"Моя первая программа на языке Сударь!"\nСпасибо вам! Всего хорошего!';
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,7 +36,7 @@ class CodeEditor extends Component {
             this.setState({
                 consoleOutput: response.data.consoleOutput
             })
-        });
+        }).catch(e => alert('Compilation was failed'));
     }
     
     render() {
@@ -44,7 +44,9 @@ class CodeEditor extends Component {
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
                 <Jumbotron>
                     <label>
-                        <textarea rows="8" cols="100" onChange={this.handleChange} />
+                        <textarea rows="8" cols="100" onChange={this.handleChange}>
+                            {this.program}
+                        </textarea>
                     </label>
                     <p>
                     <Button onClick={this.handleSubmit}>Запустить</Button>

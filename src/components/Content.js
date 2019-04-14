@@ -17,7 +17,6 @@ var textStyle = {
 
 function Content() {
   var backendUrl = 'https://calm-lake-11769.herokuapp.com';
-  //var backendUrl = 'http://localhost:8080';
 
   return (
       <div>
