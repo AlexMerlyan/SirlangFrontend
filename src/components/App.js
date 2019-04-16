@@ -10,9 +10,9 @@ var appStyle = {
 function App() {
   return (
       <div style={appStyle}>
-          <Header></Header>
-          <Content></Content>
-          <Footer></Footer>
+          <Header />
+          <Content />
+          <Footer />
       </div>
   )
 }
