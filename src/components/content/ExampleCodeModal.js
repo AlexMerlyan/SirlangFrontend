@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import { Button, Modal, modalClose, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import React, { Component } from 'react';
+import { Button, Modal } from 'react-bootstrap'
 
-class ExampleCodeModal extends React.Component {
+class ExampleCodeModal extends Component {
 
   constructor(props) {
     super(props);

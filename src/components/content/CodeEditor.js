@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { Card, Jumbotron, Button } from 'react-bootstrap'
+import { Jumbotron, Button } from 'react-bootstrap'
 
 class CodeEditor extends Component {
 
@@ -46,9 +46,13 @@ class CodeEditor extends Component {
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
                 <Jumbotron>
                     <label>
-                        <textarea rows="8" cols="100" onChange={this.handleChange}>
-                            {this.code}
-                        </textarea>
+                        <textarea
+                            style={{ width: '100%' }}
+                            rows="8"
+                            cols="100"
+                            value={this.code}
+                            onChange={this.handleChange}
+                        />
                     </label>
                     <p>
                     <Button onClick={this.handleSubmit}>Запустить</Button>

@@ -1,4 +1,5 @@
 import React from 'react';
+import imgUrl from '../assets/footerImg.jpg';
 
 var style = {
     backgroundColor: "#F8F8F8",
@@ -13,20 +14,19 @@ var style = {
 }
 
 var phantom = {
-  display: 'block',
-  padding: '20px',
-  height: '60px',
-  width: '100%',
+    display: 'block',
+    padding: '20px',
+    height: '60px',
+    width: '100%',
 }
 
 function Footer() {
-    var imgUrl = "footerImg.jpg";
     return (
         <div>
             <div style={phantom} />
             <div style={style}>
-            <p><img  src={imgUrl}></img>Все права защищены, а может быть и нет<img  src={imgUrl}></img></p>
-            <img  src={imgUrl}></img>
+            <p><img src={imgUrl} alt="" />Все права защищены, а может быть и нет<img  src={imgUrl} alt="" /></p>
+            <img src={imgUrl} alt="" />
             </div>
         </div>
     )

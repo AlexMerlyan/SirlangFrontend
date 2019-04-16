@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button, Modal, modalClose, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import ExampleCodeModal from './content/ExampleCodeModal.js'
 
 class Header extends Component {
