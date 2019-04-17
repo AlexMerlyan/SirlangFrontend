@@ -1,5 +1,5 @@
 import React from 'react';
-import imgUrl from '../assets/footerImg.jpg';
+import imgUrl from '../assets/img/footerImg.jpg';
 
 var style = {
     backgroundColor: "#F8F8F8",
