@@ -16,7 +16,7 @@ import Slider from './content/Slider.js'
 // };
 
 function Content() {
-  var backendUrl = 'https://calm-lake-11769.herokuapp.com';
+  var backendUrl = 'https://sirlang-service.herokuapp.com';
 
   return (
       <div>
