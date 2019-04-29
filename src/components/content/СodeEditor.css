@@ -1,0 +1,32 @@
+@keyframes highlight {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.highlight {
+  position: relative;
+  z-index: 1;
+}
+
+.highlight::before {
+  animation: 3s linear 0s forwards highlight;
+  content: '';
+  box-shadow: 0 0 10px 5px rgba(12, 101, 223, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: 5px;
+}
